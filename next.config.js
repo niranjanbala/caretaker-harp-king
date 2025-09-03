@@ -27,12 +27,14 @@ const nextConfig = {
     return config;
   },
   
-  // Enable static exports for PWA
+  // Enable static exports for GitHub Pages
   output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/caretaker-harp-king' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/caretaker-harp-king/' : '',
 };
 
 module.exports = nextConfig;

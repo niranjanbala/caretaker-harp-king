@@ -296,3 +296,87 @@ Hey 👋, I'm here to give you **₹250💰** when you sign up with Niyo using m
 *Progressive Web App for Music Requests & Audience Engagement*
 
 *Built with ❤️ by [Niranjan Bala](https://github.com/niranjanbala) for [Susmith Louise - Caretaker Harp King](https://instagram.com/susmithlouise)*
+## 🌐 Live Demo & Hosting
+
+### 🚀 **GitHub Pages Hosting**
+
+**Yes! You can absolutely host this on GitHub for free!**
+
+This PWA is configured for **GitHub Pages** hosting and will be available at:
+- **Live URL**: `https://niranjanbala.github.io/caretaker-harp-king/`
+- **Custom Domain**: `caretaker-harp-king.niranjanbala.dev` (if configured)
+
+### 📦 **Deployment Options**
+
+#### **Option 1: GitHub Pages (Recommended)**
+```bash
+# 1. Push to GitHub (if not done already)
+git remote add origin https://github.com/niranjanbala/caretaker-harp-king.git
+git push -u origin main
+
+# 2. Enable GitHub Pages
+# Go to: Settings > Pages > Source: GitHub Actions
+
+# 3. Deploy
+yarn deploy:github
+```
+
+#### **Option 2: Custom Domain**
+```bash
+# Deploy with custom domain
+yarn deploy
+```
+
+#### **Option 3: Other Platforms**
+- **Vercel**: Connect GitHub repo for automatic deployments
+- **Netlify**: Drag & drop the `out/` folder after `yarn build`
+- **Firebase Hosting**: Use Firebase CLI after build
+- **Surge.sh**: Simple static hosting with `surge out/`
+
+### ⚙️ **GitHub Pages Setup Instructions**
+
+1. **Push Repository to GitHub**
+   ```bash
+   git remote add origin https://github.com/niranjanbala/caretaker-harp-king.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+2. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Click **Settings** tab
+   - Scroll to **Pages** section
+   - Source: Select **GitHub Actions**
+   - The app will be available at: `https://niranjanbala.github.io/caretaker-harp-king/`
+
+3. **Automatic Deployment**
+   - Every push to `main` branch will trigger automatic deployment
+   - GitHub Actions will build and deploy the static site
+   - No server required - pure static hosting!
+
+### 🔧 **Environment Variables for Hosting**
+
+For GitHub Pages, you'll need to set up Algolia environment variables:
+
+1. **Repository Settings > Secrets and Variables > Actions**
+2. **Add Repository Secrets**:
+   - `NEXT_PUBLIC_ALGOLIA_APP_ID`: `MH2OFHTWPG`
+   - `NEXT_PUBLIC_ALGOLIA_SEARCH_KEY`: `f060130fcc0fdd98989ef15ede022955`
+
+### 🎯 **Why GitHub Pages is Perfect**
+
+- ✅ **Free hosting** for public repositories
+- ✅ **Automatic deployments** on every push
+- ✅ **Custom domain support** (optional)
+- ✅ **HTTPS by default** for security
+- ✅ **Global CDN** for fast loading worldwide
+- ✅ **Perfect for PWAs** with static export
+- ✅ **No server maintenance** required
+
+### 📱 **PWA Installation from GitHub Pages**
+
+Once hosted, users can:
+1. **Visit the live URL** on any device
+2. **Install as PWA** using browser's "Add to Home Screen"
+3. **Use offline** after initial load
+4. **Get app-like experience** on mobile and desktop

@@ -10,7 +10,9 @@
     "theme:sync": "node scripts/dev-theme-watcher.js",
     "theme:select": "node scripts/theme-selector.js",
     "algolia:upload": "node scripts/upload-to-algolia.js",
-    "setup": "node scripts/song-parser.js && node scripts/theme-builder.js && node scripts/upload-to-algolia.js"
+    "setup": "node scripts/song-parser.js && node scripts/theme-builder.js && node scripts/upload-to-algolia.js",
+    "deploy": "yarn build && touch out/.nojekyll && echo 'caretaker-harp-king.niranjanbala.dev' > out/CNAME",
+    "deploy:github": "yarn build && touch out/.nojekyll"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.12",
