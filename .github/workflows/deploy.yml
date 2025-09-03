@@ -30,12 +30,20 @@ jobs:
       env:
         NEXT_PUBLIC_ALGOLIA_APP_ID: ${{ secrets.NEXT_PUBLIC_ALGOLIA_APP_ID }}
         NEXT_PUBLIC_ALGOLIA_SEARCH_KEY: ${{ secrets.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY }}
+        NEXT_PUBLIC_ADMIN_PIN: ${{ secrets.NEXT_PUBLIC_ADMIN_PIN }}
+        NEXT_PUBLIC_APP_NAME: ${{ secrets.NEXT_PUBLIC_APP_NAME }}
+        NEXT_PUBLIC_ARTIST_NAME: ${{ secrets.NEXT_PUBLIC_ARTIST_NAME }}
+        NEXT_PUBLIC_DEVELOPER_NAME: ${{ secrets.NEXT_PUBLIC_DEVELOPER_NAME }}
 
     - name: Build application
       run: yarn build
       env:
         NEXT_PUBLIC_ALGOLIA_APP_ID: ${{ secrets.NEXT_PUBLIC_ALGOLIA_APP_ID }}
         NEXT_PUBLIC_ALGOLIA_SEARCH_KEY: ${{ secrets.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY }}
+        NEXT_PUBLIC_ADMIN_PIN: ${{ secrets.NEXT_PUBLIC_ADMIN_PIN }}
+        NEXT_PUBLIC_APP_NAME: ${{ secrets.NEXT_PUBLIC_APP_NAME }}
+        NEXT_PUBLIC_ARTIST_NAME: ${{ secrets.NEXT_PUBLIC_ARTIST_NAME }}
+        NEXT_PUBLIC_DEVELOPER_NAME: ${{ secrets.NEXT_PUBLIC_DEVELOPER_NAME }}
 
     - name: Add .nojekyll file
       run: touch out/.nojekyll

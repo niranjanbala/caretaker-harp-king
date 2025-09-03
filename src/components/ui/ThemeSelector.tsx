@@ -3,17 +3,17 @@
 import { useState } from 'react';
 import { useAppStore } from '@/lib/store';
 import { themeEngine } from '@/lib/theme-engine';
-import { Palette, Settings } from 'lucide-react';
+import { Palette } from 'lucide-react';
 
 export default function ThemeSelector() {
-  const { currentTheme, customColors, setTheme, setCustomColors } = useAppStore();
+  const { currentTheme, setTheme } = useAppStore();
   const [isOpen, setIsOpen] = useState(false);
 
   const availableThemes = themeEngine.getAvailableThemes();
 
   const handleThemeChange = (themeName: string) => {
     setTheme(themeName);
-    themeEngine.applyTheme(themeName, customColors);
+    themeEngine.applyTheme(themeName);
     setIsOpen(false);
   };
 
