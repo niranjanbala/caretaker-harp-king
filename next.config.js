@@ -33,8 +33,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/caretaker-harp-king' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/caretaker-harp-king/' : '',
 };
 
 module.exports = nextConfig;
