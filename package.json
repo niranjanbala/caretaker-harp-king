@@ -51,10 +51,10 @@
   "description": "Progressive Web App for Caretaker Harp King music requests and audience engagement with Spotify-style UX and Algolia search",
   "repository": {
     "type": "git",
-    "url": "https://github.com/susmithlouise/caretaker-harp-king.git"
+    "url": "https://github.com/niranjanbala/caretaker-harp-king.git"
   },
-  "homepage": "https://github.com/susmithlouise/caretaker-harp-king#readme",
+  "homepage": "https://github.com/niranjanbala/caretaker-harp-king#readme",
   "bugs": {
-    "url": "https://github.com/susmithlouise/caretaker-harp-king/issues"
+    "url": "https://github.com/niranjanbala/caretaker-harp-king/issues"
   }
 }
