@@ -1,0 +1,891 @@
+[
+  {
+    "id": "song-1",
+    "title": "Another brick in the wall",
+    "artist": "Pink Floyd",
+    "year": 1979,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-2",
+    "title": "Annie's Song",
+    "artist": "John Denver",
+    "year": 1974,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-3",
+    "title": "All I Have To Do Is Dream",
+    "artist": "Everly brothers",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-4",
+    "title": "Amazing Grace",
+    "artist": "John Newton",
+    "year": 1772,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-5",
+    "title": "A Thousand Years",
+    "artist": "Christina Perry",
+    "year": 2011,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-6",
+    "title": "Achy Breaky Heart",
+    "artist": "Billy Ray Cyrus",
+    "year": 1992,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-7",
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "year": 2017,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-8",
+    "title": "Brown girl in the ring",
+    "artist": "Boney m",
+    "year": 1978,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-9",
+    "title": "Bella Ciao",
+    "artist": "Italian folk song",
+    "year": 1943,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-10",
+    "title": "Beat it",
+    "artist": "Michael Jackson",
+    "year": 1982,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-11",
+    "title": "Blowin' in the wind",
+    "artist": "Bob dylan",
+    "year": 1963,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-12",
+    "title": "Boulevard of  Broken Dreams",
+    "artist": "Greenday",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-13",
+    "title": "Besame mucho",
+    "artist": "Consuelo Velázquez",
+    "year": 1940,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-14",
+    "title": "Bad moon rising",
+    "artist": "CCR",
+    "year": 1969,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-15",
+    "title": "Born To Touch Your Feelings",
+    "artist": "Scorpions",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-16",
+    "title": "Can't help falling in love",
+    "artist": "Elvis Presley",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-17",
+    "title": "Cheri Cheri Lady",
+    "artist": "Modern Talking",
+    "year": 1985,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-18",
+    "title": "Country roads",
+    "artist": "John Denver",
+    "year": 1971,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-19",
+    "title": "Coming back to life",
+    "artist": "Pink Floyd",
+    "year": 1994,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-20",
+    "title": "Count on me",
+    "artist": "Bruno Mars",
+    "year": 2011,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-21",
+    "title": "Despacito",
+    "artist": "Luis Fonsi ft. Daddy Yankee",
+    "year": 2017,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-22",
+    "title": "Don't Worry, Be Happy",
+    "artist": "Bobby McFerrin",
+    "year": 1988,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-23",
+    "title": "Darling Clementine",
+    "artist": "American folk",
+    "year": 1884,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-24",
+    "title": "Faded",
+    "artist": "Alan Walker",
+    "year": 2015,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-25",
+    "title": "Felicita",
+    "artist": "Al Bano & Romina Power (1982) Berlin",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-26",
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": 1977,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-27",
+    "title": "Have you ever seen the rain",
+    "artist": "CCR",
+    "year": 1971,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-28",
+    "title": "It's My Life",
+    "artist": "Bon Jovi",
+    "year": 2000,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-29",
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "year": 1971,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-30",
+    "title": "I Just Called to Say I Love You",
+    "artist": "Stevie Wonder",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-31",
+    "title": "I have a dream",
+    "artist": "Abba",
+    "year": 1979,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-32",
+    "title": "If  you wanna be happy",
+    "artist": "Jimmy Soul",
+    "year": 1963,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-33",
+    "title": "Jamaica farewell",
+    "artist": "Harry belafonte",
+    "year": 1957,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-34",
+    "title": "Knokin' on heaven's door",
+    "artist": "Bob dylan",
+    "year": 1973,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-35",
+    "title": "Lady",
+    "artist": "Kenny Rogers",
+    "year": 1980,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-36",
+    "title": "Let it be",
+    "artist": "Beatles",
+    "year": 1970,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-37",
+    "title": "Let it be me",
+    "artist": "The Everly Brothers",
+    "year": 1960,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-38",
+    "title": "Leaving on a Jet plane",
+    "artist": "John Denver",
+    "year": 1969,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-39",
+    "title": "Love me tender",
+    "artist": "Elvis Presley",
+    "year": 1956,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-40",
+    "title": "My heart will go on",
+    "artist": "Celine Dion (Titanic - 1997)",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-41",
+    "title": "Mr. Tambourine man",
+    "artist": "Bob Dylan",
+    "year": 1965,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-42",
+    "title": "Mary Ann",
+    "artist": "Caribbean folk song",
+    "year": 1945,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-43",
+    "title": "My life Going on",
+    "artist": "Cecelia krull (Money heist -",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-44",
+    "title": "No Woman No Cry",
+    "artist": "Bob Marley",
+    "year": 1974,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-45",
+    "title": "Oh Carol",
+    "artist": "Neil sedaka",
+    "year": 1959,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-46",
+    "title": "Oh Susana",
+    "artist": "Stephen foster",
+    "year": 1848,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-47",
+    "title": "Ode to joy",
+    "artist": "Ludwig van Beethoven",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-48",
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "year": 2017,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-49",
+    "title": "People are Strange",
+    "artist": "The Doors",
+    "year": 1967,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-50",
+    "title": "Rivers of  Babylon",
+    "artist": "Boney m",
+    "year": 1978,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-51",
+    "title": "Right Here Waiting For You",
+    "artist": "Richard Marx",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-52",
+    "title": "Red red wine",
+    "artist": "Neil diamond",
+    "year": 1967,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-53",
+    "title": "Riders on the storm",
+    "artist": "The Doors",
+    "year": 1971,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-54",
+    "title": "Red river valley",
+    "artist": "Cowboy Song",
+    "year": 1928,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-55",
+    "title": "Smell like teen spirit",
+    "artist": "Nirvana",
+    "year": 1991,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-56",
+    "title": "Scientist",
+    "artist": "Coldplay",
+    "year": 2002,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-57",
+    "title": "Summer wines",
+    "artist": "Nancy Sinatra",
+    "year": 1961,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-58",
+    "title": "Stand by me",
+    "artist": "Ben E King",
+    "year": 1961,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-59",
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "year": 1969,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-60",
+    "title": "Scarborough fair",
+    "artist": "Simon & Garfunkel",
+    "year": 1968,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-61",
+    "title": "Spring",
+    "artist": "Antonio Vivaldi",
+    "year": 1725,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-62",
+    "title": "The man who sold the world",
+    "artist": "David Bowie,",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-63",
+    "title": "Three Little Birds",
+    "artist": "Bob Marley",
+    "year": 1977,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-64",
+    "title": "The Moon Represents My Heart",
+    "artist": "Teresa Teng",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-65",
+    "title": "The house of  rising sun",
+    "artist": "The animals",
+    "year": 1961,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-66",
+    "title": "Until I Found You",
+    "artist": "Stephen Sanchez",
+    "year": 2021,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-67",
+    "title": "We will rock you",
+    "artist": "Queen",
+    "year": 1977,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-68",
+    "title": "Wavin' Flag",
+    "artist": "K'naan",
+    "year": 2009,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-69",
+    "title": "Wonderful tonight",
+    "artist": "Eric Clapton",
+    "year": 1977,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-70",
+    "title": "What a wonderful world",
+    "artist": "Louis Armstrong",
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-71",
+    "title": "Who'll stop the rain",
+    "artist": "CCR",
+    "year": 1970,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-72",
+    "title": "We shall overcome",
+    "artist": "Pete Seeger",
+    "year": 1963,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-73",
+    "title": "You are my sunshine",
+    "artist": "Jimmie Davis",
+    "year": 1940,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-74",
+    "title": "Don't look back in anger",
+    "artist": "Oasis",
+    "year": 1995,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-75",
+    "title": "I wanna hold your hand",
+    "artist": "Beatles",
+    "year": 1963,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-76",
+    "title": "Three Little Birds",
+    "artist": "Bob Marley",
+    "year": 1977,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-77",
+    "title": "Wish you were here",
+    "artist": "Pink Floyd",
+    "year": 1975,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-78",
+    "title": "Who'll stop the",
+    "artist": "CCR",
+    "year": 1970,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-79",
+    "title": "Words",
+    "artist": "Bee Gees",
+    "year": 1968,
+    "category": "Western",
+    "subcategory": "Instrumental"
+  },
+  {
+    "id": "song-80",
+    "title": "My heart will go on",
+    "artist": "Celine Dion",
+    "year": 1997,
+    "category": "Western",
+    "subcategory": "Guitar Solos"
+  },
+  {
+    "id": "song-81",
+    "title": "Another brick in the wall",
+    "artist": "Pink Floyd",
+    "year": 1979,
+    "category": "Western",
+    "subcategory": "Guitar Solos"
+  },
+  {
+    "id": "song-82",
+    "title": "Love story",
+    "artist": "Francis Lai",
+    "category": "Western",
+    "subcategory": "Guitar Solos"
+  },
+  {
+    "id": "song-83",
+    "title": "Sara",
+    "artist": "Bob Dylan",
+    "category": "Western",
+    "subcategory": "Guitar Solos"
+  },
+  {
+    "id": "song-84",
+    "title": "Another brick in the wall",
+    "artist": "Pink Floyd",
+    "year": 1979,
+    "category": "Western",
+    "subcategory": "Harmonica Solos"
+  },
+  {
+    "id": "song-85",
+    "title": "Ajeeb Dastan Hai Yeh",
+    "artist": "Lata Mangeshkar",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-86",
+    "title": "(Dil    Apna Aur Preet Parai",
+    "artist": "1960)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-87",
+    "title": "Aashiyan",
+    "artist": "Barfi",
+    "year": 2022,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-88",
+    "title": "Ae Mere Humsafar",
+    "artist": "Qayamat Se Qayamat Tak",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-89",
+    "title": "Aa Chalke Tujhe",
+    "artist": "Kishore Kumar (Door Gagan",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-90",
+    "title": "Beege Hont Tere",
+    "artist": "Murder",
+    "year": 2004,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-91",
+    "title": "Beegi Beegi Si Hai",
+    "artist": "James (Gangster - 2006)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-92",
+    "title": "Chalte Chalte",
+    "artist": "Kishore Kumar (Chalte Chalte -",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-93",
+    "title": "Dum Maro Dum",
+    "artist": "Hare Rama Hare Krishna",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-94",
+    "title": "Give Me Some Sunshine",
+    "artist": "Three Idiots",
+    "year": 2009,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-95",
+    "title": "Hai Apna Dil",
+    "artist": "Bees Saal Baad",
+    "year": 1962,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-96",
+    "title": "Har Gadi Badal",
+    "artist": "Kal Ho Na Ho",
+    "year": 2003,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-97",
+    "title": "Hotonse Chu lo tum",
+    "artist": "Jagjit Singh ( Prem Geeth",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-98",
+    "title": "Iam a Disco Dancer",
+    "artist": "Disco Dancer",
+    "year": 1982,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-99",
+    "title": "Kuch Kuch Hota Hai",
+    "artist": "Udit Narayan Alka Yagnik",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-100",
+    "title": "Kya Mujhe Pyar Hai",
+    "artist": "KK (Woh Lamhe - 2006)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-101",
+    "title": "Kwhaja Mere Kwhaja",
+    "artist": "AR Rehman (Jodhaa",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-102",
+    "title": "Akbar",
+    "artist": "2008)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-103",
+    "title": "Mere Sapno ki",
+    "artist": "Aradhana",
+    "year": 1969,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-104",
+    "title": "O re Piya",
+    "artist": "Rahat Fateh Ali Khan (Aaja Nachle -",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-105",
+    "title": "Papa Kehte Hai",
+    "artist": "Qayamat Se Qayamat tak",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-106",
+    "title": "Piyu Bole",
+    "artist": "Parineetha",
+    "year": 2005,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-107",
+    "title": "Sason Ki Mala Pe",
+    "artist": "Nusrat Fateh Ali Khan",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-108",
+    "title": "Tujhe Dekha To Ye",
+    "artist": "Latha Mangeshkar, Kumar",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-109",
+    "title": "Sanu ( Dilwale Dulhaniya Le Jayenge",
+    "artist": "1995)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-110",
+    "title": "Teri Deewani",
+    "artist": "Kailash Kher",
+    "year": 2007,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-111",
+    "title": "Yeh Dosti",
+    "artist": "Kishore Kumar (Sholey - 1975)",
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-112",
+    "title": "Zara Zara",
+    "artist": "Bombay Jayashri",
+    "year": 2001,
+    "category": "Bollywood"
+  },
+  {
+    "id": "song-113",
+    "title": "Bombay Helutaie",
+    "artist": "Rajakumara (2017) Tribute",
+    "category": "Regional",
+    "subcategory": "Kannada"
+  },
+  {
+    "id": "song-114",
+    "title": "Chekkele",
+    "artist": "Avial",
+    "year": 2008,
+    "category": "Regional",
+    "subcategory": "Malayalam"
+  },
+  {
+    "id": "song-115",
+    "title": "CID Moosa Theme (2003)",
+    "artist": "90s Kids",
+    "category": "Regional",
+    "subcategory": "Malayalam"
+  },
+  {
+    "id": "song-116",
+    "title": "Omal Kanmani",
+    "artist": "Naran",
+    "year": 2005,
+    "category": "Regional",
+    "subcategory": "Malayalam"
+  },
+  {
+    "id": "song-117",
+    "title": "Tharaka Pennale",
+    "artist": "Folk Song",
+    "year": 2018,
+    "category": "Regional",
+    "subcategory": "Malayalam"
+  },
+  {
+    "id": "song-118",
+    "title": "Enadhuyire",
+    "artist": "Bheema",
+    "year": 2008,
+    "category": "Regional",
+    "subcategory": "Tamil"
+  },
+  {
+    "id": "song-119",
+    "title": "Vaseegara",
+    "artist": "Minnale",
+    "year": 2001,
+    "category": "Regional",
+    "subcategory": "Tamil"
+  }
+]

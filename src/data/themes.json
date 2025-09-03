@@ -1,0 +1,322 @@
+{
+  "bigspring-nextjs": {
+    "name": "bigspring-nextjs",
+    "displayName": "Bigspring Nextjs",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#0AA8A7",
+          "secondary": "#f9f9f9",
+          "body": "#fff",
+          "border": "#eaeaea",
+          "theme_light": "#EDF6F5",
+          "theme_dark": "#1b2229"
+        },
+        "text_color": {
+          "default": "#777",
+          "dark": "#222",
+          "light": "#959595"
+        }
+      },
+      "darkmode": {
+        "theme_color": {
+          "primary": "#0AA8A7",
+          "secondary": "#101418",
+          "body": "#1E262C",
+          "border": "#3E3E3E",
+          "theme_light": "#1b2229",
+          "theme_dark": "#242e35"
+        },
+        "text_color": {
+          "default": "#cbcbcb",
+          "dark": "#fff",
+          "light": "#959595"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Urbanist:wght@500;600;700",
+        "primary_type": "sans-serif",
+        "secondary": "Poppins:wght@400;500",
+        "secondary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.250"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ],
+    "source": "/Users/niranjanbala/ideas/my-philosophy/my-themes/bigspring-nextjs/themes/bigspring-nextjs/src/config/theme.json"
+  },
+  "clarity-nextjs": {
+    "name": "clarity-nextjs",
+    "displayName": "Clarity Nextjs",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#A97EFF",
+          "secondary": "#000",
+          "body": "#fff",
+          "border": "#F9F9F9",
+          "light": "#F9F8FF",
+          "dark": "#101928"
+        },
+        "text_color": {
+          "text": "#101828",
+          "text-dark": "#040404",
+          "text-light": "#fff"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Satoshi",
+        "primary_type": "sans-serif",
+        "secondary": "Clash Grotesk",
+        "secondary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.23"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ],
+    "source": "/Users/niranjanbala/ideas/my-philosophy/my-themes/clarity-nextjs/themes/clarity-nextjs/src/config/theme.json"
+  },
+  "copper-nextjs": {
+    "name": "copper-nextjs",
+    "displayName": "Copper Nextjs",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#ff3158",
+          "secondary": "#ffbb33",
+          "tertiary": "#1e858b",
+          "quaternary": "#21435b",
+          "body": "#eaeaea",
+          "border": "#CECECE",
+          "light": "#f6f6f6",
+          "dark": "#1d1c21"
+        },
+        "text_color": {
+          "text": "#222222",
+          "text-dark": "#444444",
+          "text-light": "#4F4F4F"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Quicksand:wght@400;500;600;700",
+        "primary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "15",
+        "scale": "1.2"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ],
+    "source": "/Users/niranjanbala/ideas/my-philosophy/my-themes/copper-nextjs/themes/copper-nextjs/src/config/theme.json"
+  },
+  "darkrise-nextjs": {
+    "name": "darkrise-nextjs",
+    "displayName": "Darkrise Nextjs",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#070707",
+          "secondary": "#2d57ee",
+          "body": "#000",
+          "border": "#2c2c2c",
+          "dark": "#0b0b0c"
+        },
+        "text_color": {
+          "text": "#e9e9e9",
+          "text-dark": "#4e4e59",
+          "text-light": "#cdcdcd"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Figtree",
+        "primary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.263"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ],
+    "source": "/Users/niranjanbala/ideas/my-philosophy/my-themes/darkrise-nextjs/themes/darkrise-nextjs/src/config/theme.json"
+  },
+  "default-light": {
+    "name": "default-light",
+    "displayName": "Default Light",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#3B82F6",
+          "secondary": "#F3F4F6",
+          "body": "#FFFFFF",
+          "border": "#E5E7EB",
+          "theme_light": "#EFF6FF",
+          "theme_dark": "#1F2937"
+        },
+        "text_color": {
+          "default": "#6B7280",
+          "dark": "#111827",
+          "light": "#9CA3AF"
+        }
+      },
+      "darkmode": {
+        "theme_color": {
+          "primary": "#3B82F6",
+          "secondary": "#1F2937",
+          "body": "#111827",
+          "border": "#374151",
+          "theme_light": "#1F2937",
+          "theme_dark": "#0F172A"
+        },
+        "text_color": {
+          "default": "#D1D5DB",
+          "dark": "#F9FAFB",
+          "light": "#9CA3AF"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Inter:wght@400;500;600;700",
+        "primary_type": "sans-serif",
+        "secondary": "Inter:wght@400;500",
+        "secondary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.250"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "caretaker-theme": {
+    "name": "caretaker-theme",
+    "displayName": "Caretaker Harp King",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#D97706",
+          "secondary": "#FEF3C7",
+          "body": "#FFFBEB",
+          "border": "#FDE68A",
+          "theme_light": "#FEF3C7",
+          "theme_dark": "#92400E"
+        },
+        "text_color": {
+          "default": "#78716C",
+          "dark": "#1C1917",
+          "light": "#A8A29E"
+        }
+      },
+      "darkmode": {
+        "theme_color": {
+          "primary": "#F59E0B",
+          "secondary": "#451A03",
+          "body": "#1C1917",
+          "border": "#78716C",
+          "theme_light": "#451A03",
+          "theme_dark": "#0C0A09"
+        },
+        "text_color": {
+          "default": "#D6D3D1",
+          "dark": "#F5F5F4",
+          "light": "#A8A29E"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Poppins:wght@400;500;600;700",
+        "primary_type": "sans-serif",
+        "secondary": "Inter:wght@400;500",
+        "secondary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.200"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "wakanda-theme": {
+    "name": "wakanda-theme",
+    "displayName": "Wakanda Forever",
+    "colors": {
+      "default": {
+        "theme_color": {
+          "primary": "#9333EA",
+          "secondary": "#1F1B24",
+          "body": "#0F0C15",
+          "border": "#2D1B69",
+          "theme_light": "#4C1D95",
+          "theme_dark": "#0C0A0F"
+        },
+        "text_color": {
+          "default": "#C4B5FD",
+          "dark": "#F3F4F6",
+          "light": "#A78BFA"
+        }
+      },
+      "darkmode": {
+        "theme_color": {
+          "primary": "#A855F7",
+          "secondary": "#1E1B3A",
+          "body": "#0F0C15",
+          "border": "#2D1B69",
+          "theme_light": "#4C1D95",
+          "theme_dark": "#0C0A0F"
+        },
+        "text_color": {
+          "default": "#C4B5FD",
+          "dark": "#F3F4F6",
+          "light": "#A78BFA"
+        }
+      }
+    },
+    "fonts": {
+      "font_family": {
+        "primary": "Inter:wght@400;500;600;700",
+        "primary_type": "sans-serif",
+        "secondary": "Roboto:wght@400;500",
+        "secondary_type": "sans-serif"
+      },
+      "font_size": {
+        "base": "16",
+        "scale": "1.250"
+      }
+    },
+    "customizable": [
+      "primary",
+      "secondary"
+    ]
+  }
+}
