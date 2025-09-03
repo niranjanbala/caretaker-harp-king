@@ -138,9 +138,9 @@ function createFallbackThemes() {
       },
       customizable: ['primary', 'secondary']
     },
-    'wakanda-theme': {
-      name: 'wakanda-theme',
-      displayName: 'Wakanda Forever',
+    'nthora-theme': {
+      name: 'nthora-theme',
+      displayName: 'N-th\'ora Forever',
       colors: {
         default: {
           theme_color: {
