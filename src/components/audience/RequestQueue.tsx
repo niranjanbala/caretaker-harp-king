@@ -47,7 +47,7 @@ export default function RequestQueue() {
                 </div>
                 {currentRequest.dedication && (
                   <div className="mt-2 p-2 bg-base-200/50 rounded text-sm italic">
-                    "{currentRequest.dedication}"
+                    &ldquo;{currentRequest.dedication}&rdquo;
                   </div>
                 )}
               </div>
@@ -122,7 +122,7 @@ export default function RequestQueue() {
                     {request.dedication && (
                       <div className="flex items-center gap-1 mt-1 text-xs text-base-content/60">
                         <MessageCircle className="w-3 h-3" />
-                        <span className="truncate">"{request.dedication}"</span>
+                        <span className="truncate">&ldquo;{request.dedication}&rdquo;</span>
                       </div>
                     )}
                   </div>

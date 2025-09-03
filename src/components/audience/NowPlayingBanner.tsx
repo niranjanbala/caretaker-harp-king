@@ -49,7 +49,7 @@ export default function NowPlayingBanner() {
               <div className="min-w-0">
                 <div className="text-xs text-gray-500 mb-1">Dedication:</div>
                 <div className="text-sm text-gray-300 italic">
-                  "{nowPlaying.dedication}"
+                  &ldquo;{nowPlaying.dedication}&rdquo;
                 </div>
               </div>
             </div>
