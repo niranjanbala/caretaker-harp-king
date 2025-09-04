@@ -15,9 +15,9 @@ export default function AudienceMode() {
   return (
     <div className="text-white">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Good evening</h1>
-        <p className="text-gray-400">Ready to make some music requests?</p>
+      <div className="mb-6 lg:mb-8">
+        <h1 className="text-2xl lg:text-4xl font-bold mb-2">Good evening</h1>
+        <p className="text-sm lg:text-base text-gray-400">Ready to make some music requests?</p>
       </div>
 
       {/* Now Playing Section */}
@@ -25,53 +25,53 @@ export default function AudienceMode() {
 
       {/* Active Poll Alert */}
       {activePoll && (
-        <div className="mb-6 p-4 bg-blue-600/20 border border-blue-600/30 rounded-lg">
-          <div className="flex items-center gap-3">
-            <Vote className="w-5 h-5 text-blue-400" />
-            <div>
-              <h3 className="font-semibold text-blue-400">Live Poll Active</h3>
-              <p className="text-sm text-gray-300">{activePoll.question}</p>
+        <div className="mb-4 lg:mb-6 p-3 lg:p-4 bg-blue-600/20 border border-blue-600/30 rounded-lg">
+          <div className="flex items-center gap-2 lg:gap-3">
+            <Vote className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 flex-shrink-0" />
+            <div className="min-w-0">
+              <h3 className="text-sm lg:text-base font-semibold text-blue-400">Live Poll Active</h3>
+              <p className="text-xs lg:text-sm text-gray-300 truncate">{activePoll.question}</p>
             </div>
           </div>
         </div>
       )}
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-3 gap-2 lg:gap-4 mb-6 lg:mb-8">
         <button
           onClick={() => setActiveView('browse')}
-          className={`p-4 rounded-lg transition-colors ${
+          className={`p-3 lg:p-4 rounded-lg transition-colors ${
             activeView === 'browse'
               ? 'bg-green-600 text-white'
               : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
           }`}
         >
-          <Play className="w-6 h-6 mb-2" />
-          <div className="text-sm font-medium">Browse Songs</div>
+          <Play className="w-5 h-5 lg:w-6 lg:h-6 mb-1 lg:mb-2 mx-auto" />
+          <div className="text-xs lg:text-sm font-medium">Browse Songs</div>
         </button>
         
         <button
           onClick={() => setActiveView('queue')}
-          className={`p-4 rounded-lg transition-colors ${
+          className={`p-3 lg:p-4 rounded-lg transition-colors ${
             activeView === 'queue'
               ? 'bg-green-600 text-white'
               : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
           }`}
         >
-          <Clock className="w-6 h-6 mb-2" />
-          <div className="text-sm font-medium">Request Queue</div>
+          <Clock className="w-5 h-5 lg:w-6 lg:h-6 mb-1 lg:mb-2 mx-auto" />
+          <div className="text-xs lg:text-sm font-medium">Request Queue</div>
         </button>
         
         <button
           onClick={() => setActiveView('polls')}
-          className={`p-4 rounded-lg transition-colors ${
+          className={`p-3 lg:p-4 rounded-lg transition-colors ${
             activeView === 'polls'
               ? 'bg-green-600 text-white'
               : 'bg-gray-800 hover:bg-gray-700 text-gray-300'
           }`}
         >
-          <Vote className="w-6 h-6 mb-2" />
-          <div className="text-sm font-medium">Polls</div>
+          <Vote className="w-5 h-5 lg:w-6 lg:h-6 mb-1 lg:mb-2 mx-auto" />
+          <div className="text-xs lg:text-sm font-medium">Polls</div>
         </button>
       </div>
 

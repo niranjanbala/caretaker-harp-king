@@ -45,9 +45,16 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "jest.setup.js",
+    "jest.config.js",
+    "playwright.config.ts",
+    "src/types/global.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "coverage",
+    "playwright-report",
+    "test-results"
   ]
 }

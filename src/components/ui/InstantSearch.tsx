@@ -2,21 +2,27 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useAppStore } from '@/lib/store';
+import { AlgoliaService } from '@/lib/algolia';
 import { Song } from '@/types';
-import { Search, Clock, TrendingUp, X } from 'lucide-react';
+import { Search, Clock, TrendingUp, X, Loader2 } from 'lucide-react';
 
-interface SearchResult {
+interface AlgoliaSearchResult {
   song: Song;
-  matchType: 'title' | 'artist' | 'category';
-  highlightedText: string;
+  _highlightResult: {
+    title?: { value: string };
+    artist?: { value: string };
+    category?: { value: string };
+  };
 }
 
 export default function InstantSearch() {
   const { songs, setSearchQuery } = useAppStore();
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [results, setResults] = useState<AlgoliaSearchResult[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [useLocalSearch, setUseLocalSearch] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -27,8 +33,16 @@ export default function InstantSearch() {
     'Elvis Presley', 'Michael Jackson', 'Queen'
   ];
 
-  // Recent searches (mock data for demo)
-  const recentSearches = ['Beatles', 'Bollywood', 'Pink Floyd'];
+  // Recent searches (stored in localStorage)
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Load recent searches from localStorage
+    const stored = localStorage.getItem('recent-searches');
+    if (stored) {
+      setRecentSearches(JSON.parse(stored));
+    }
+  }, []);
 
   useEffect(() => {
     if (query.trim().length < 2) {
@@ -37,50 +51,96 @@ export default function InstantSearch() {
       return;
     }
 
-    // Algolia-style instant search
-    const searchResults: SearchResult[] = [];
-    const lowerQuery = query.toLowerCase();
+    performSearch(query);
+  }, [query, songs, useLocalSearch]);
+
+  const performSearch = async (searchQuery: string) => {
+    setIsLoading(true);
+    
+    try {
+      if (useLocalSearch || !process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
+        // Fallback to local search
+        const searchResults = performLocalSearch(searchQuery);
+        setResults(searchResults);
+      } else {
+        // Use Algolia search
+        const algoliaResults = await AlgoliaService.searchSongs(searchQuery);
+        setResults(algoliaResults.hits.map(hit => ({
+          song: hit as Song,
+          _highlightResult: hit._highlightResult || {}
+        })));
+      }
+    } catch (error) {
+      console.warn('Algolia search failed, falling back to local search:', error);
+      setUseLocalSearch(true);
+      const searchResults = performLocalSearch(searchQuery);
+      setResults(searchResults);
+    } finally {
+      setIsLoading(false);
+      setSelectedIndex(-1);
+    }
+  };
+
+  const performLocalSearch = (searchQuery: string): AlgoliaSearchResult[] => {
+    const searchResults: AlgoliaSearchResult[] = [];
+    const lowerQuery = searchQuery.toLowerCase();
 
     songs.forEach(song => {
+      let matchType: 'title' | 'artist' | 'category' | null = null;
+      let highlightedText = '';
+
       // Title match
       if (song.title.toLowerCase().includes(lowerQuery)) {
-        searchResults.push({
-          song,
-          matchType: 'title',
-          highlightedText: highlightMatch(song.title, query)
-        });
+        matchType = 'title';
+        highlightedText = highlightMatch(song.title, searchQuery);
       }
       // Artist match
       else if (song.artist.toLowerCase().includes(lowerQuery)) {
-        searchResults.push({
-          song,
-          matchType: 'artist',
-          highlightedText: highlightMatch(song.artist, query)
-        });
+        matchType = 'artist';
+        highlightedText = highlightMatch(song.artist, searchQuery);
       }
       // Category match
       else if (song.category.toLowerCase().includes(lowerQuery)) {
+        matchType = 'category';
+        highlightedText = highlightMatch(song.category, searchQuery);
+      }
+
+      if (matchType) {
         searchResults.push({
           song,
-          matchType: 'category',
-          highlightedText: highlightMatch(song.category, query)
+          _highlightResult: {
+            [matchType]: { value: highlightedText }
+          }
         });
       }
     });
 
     // Sort by relevance (title matches first, then artist, then category)
     searchResults.sort((a, b) => {
-      const order = { title: 0, artist: 1, category: 2 };
-      return order[a.matchType] - order[b.matchType];
+      const getMatchType = (result: AlgoliaSearchResult) => {
+        if (result._highlightResult.title) return 0;
+        if (result._highlightResult.artist) return 1;
+        if (result._highlightResult.category) return 2;
+        return 3;
+      };
+      return getMatchType(a) - getMatchType(b);
     });
 
-    setResults(searchResults.slice(0, 8)); // Limit to 8 results like Algolia
-    setSelectedIndex(-1);
-  }, [query, songs]);
+    return searchResults.slice(0, 8);
+  };
 
   const highlightMatch = (text: string, query: string): string => {
     const regex = new RegExp(`(${query})`, 'gi');
     return text.replace(regex, '<mark class="bg-purple-500/30 text-purple-200">$1</mark>');
+  };
+
+  const saveRecentSearch = (searchQuery: string) => {
+    const trimmed = searchQuery.trim();
+    if (!trimmed) return;
+
+    const updated = [trimmed, ...recentSearches.filter(s => s !== trimmed)].slice(0, 5);
+    setRecentSearches(updated);
+    localStorage.setItem('recent-searches', JSON.stringify(updated));
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -89,7 +149,7 @@ export default function InstantSearch() {
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
-        setSelectedIndex(prev => 
+        setSelectedIndex(prev =>
           prev < results.length - 1 ? prev + 1 : prev
         );
         break;
@@ -113,8 +173,16 @@ export default function InstantSearch() {
   const handleSelectSong = (song: Song) => {
     setQuery(song.title);
     setSearchQuery(song.title);
+    saveRecentSearch(song.title);
     setIsOpen(false);
     setSelectedIndex(-1);
+  };
+
+  const handlePopularSearch = (searchTerm: string) => {
+    setQuery(searchTerm);
+    setSearchQuery(searchTerm);
+    saveRecentSearch(searchTerm);
+    setIsOpen(false);
   };
 
   const handleClear = () => {
@@ -126,7 +194,7 @@ export default function InstantSearch() {
   };
 
   return (
-    <div className="relative max-w-md">
+    <div className="relative w-full max-w-md">
       {/* Search Input */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -141,16 +209,21 @@ export default function InstantSearch() {
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
-          className="w-full bg-gray-800 border-0 rounded-full py-3 pl-10 pr-10 text-white placeholder-gray-400 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
+          className="w-full bg-gray-800 border-0 rounded-full py-3 pl-10 pr-12 text-white placeholder-gray-400 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
         />
-        {query && (
-          <button
-            onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+          {isLoading && (
+            <Loader2 className="w-4 h-4 text-gray-400 animate-spin" />
+          )}
+          {query && (
+            <button
+              onClick={handleClear}
+              className="text-gray-400 hover:text-white"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Search Results Dropdown */}
@@ -169,11 +242,7 @@ export default function InstantSearch() {
                     {recentSearches.map((search, index) => (
                       <button
                         key={index}
-                        onClick={() => {
-                          setQuery(search);
-                          setSearchQuery(search);
-                          setIsOpen(false);
-                        }}
+                        onClick={() => handlePopularSearch(search)}
                         className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors"
                       >
                         {search}
@@ -193,11 +262,7 @@ export default function InstantSearch() {
                   {popularSearches.slice(0, 5).map((search, index) => (
                     <button
                       key={index}
-                      onClick={() => {
-                        setQuery(search);
-                        setSearchQuery(search);
-                        setIsOpen(false);
-                      }}
+                      onClick={() => handlePopularSearch(search)}
                       className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors"
                     >
                       {search}
@@ -208,8 +273,11 @@ export default function InstantSearch() {
             </div>
           ) : results.length > 0 ? (
             <div className="p-2">
-              <div className="text-xs text-gray-500 px-3 py-2 uppercase tracking-wider">
+              <div className="text-xs text-gray-500 px-3 py-2 uppercase tracking-wider flex items-center gap-2">
                 Songs ({results.length} results)
+                {useLocalSearch && (
+                  <span className="text-yellow-400 text-xs">(Local Search)</span>
+                )}
               </div>
               {results.map((result, index) => (
                 <button
@@ -226,33 +294,36 @@ export default function InstantSearch() {
                       <Search className="w-4 h-4 text-gray-400" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div 
+                      <div
                         className="font-medium truncate"
-                        dangerouslySetInnerHTML={{ 
-                          __html: result.matchType === 'title' 
-                            ? result.highlightedText 
-                            : result.song.title 
+                        dangerouslySetInnerHTML={{
+                          __html: result._highlightResult.title?.value || result.song.title
                         }}
                       />
                       <div className="text-sm text-gray-400 truncate">
-                        {result.matchType === 'artist' ? (
-                          <span dangerouslySetInnerHTML={{ __html: result.highlightedText }} />
-                        ) : (
-                          result.song.artist
-                        )}
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: result._highlightResult.artist?.value || result.song.artist
+                          }}
+                        />
                         {result.song.year && ` • ${result.song.year}`}
                       </div>
                     </div>
                     <div className="text-xs text-gray-500">
-                      {result.matchType === 'category' ? (
-                        <span dangerouslySetInnerHTML={{ __html: result.highlightedText }} />
-                      ) : (
-                        result.song.category
-                      )}
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: result._highlightResult.category?.value || result.song.category
+                        }}
+                      />
                     </div>
                   </div>
                 </button>
               ))}
+            </div>
+          ) : isLoading ? (
+            <div className="p-8 text-center">
+              <Loader2 className="w-8 h-8 text-gray-400 mx-auto mb-3 animate-spin" />
+              <p className="text-gray-400">Searching...</p>
             </div>
           ) : (
             <div className="p-8 text-center">

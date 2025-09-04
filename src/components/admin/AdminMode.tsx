@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useAppStore } from '@/lib/store';
+import DragDropQueue from './DragDropQueue';
 import { BarChart3, Users, Settings, List, Vote, LogOut } from 'lucide-react';
 
 export default function AdminMode() {
@@ -123,40 +124,7 @@ export default function AdminMode() {
 
       {/* Tab Content */}
       <div className="min-h-[60vh]">
-        {activeTab === 'queue' && (
-          <div className="card bg-base-100 shadow">
-            <div className="card-body">
-              <h2 className="card-title">Request Queue Management</h2>
-              <p className="text-base-content/70">
-                Manage song requests, reorder queue, and update status
-              </p>
-              <div className="mt-4">
-                {requests.length === 0 ? (
-                  <div className="text-center py-8 text-base-content/50">
-                    No requests yet
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    {requests.map((request) => (
-                      <div key={request.id} className="flex items-center justify-between p-3 bg-base-200 rounded-lg">
-                        <div>
-                          <div className="font-medium">{request.song.title}</div>
-                          <div className="text-sm text-base-content/70">
-                            by {request.song.artist}
-                            {request.requesterName && ` • Requested by ${request.requesterName}`}
-                          </div>
-                        </div>
-                        <div className="badge badge-outline">
-                          {request.status}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        {activeTab === 'queue' && <DragDropQueue />}
 
         {activeTab === 'polls' && (
           <div className="card bg-base-100 shadow">

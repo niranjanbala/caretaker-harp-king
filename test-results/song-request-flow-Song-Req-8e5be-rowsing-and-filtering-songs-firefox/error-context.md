@@ -1,0 +1,243 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation "Main navigation" [ref=e4]:
+        - generic [ref=e5]:
+          - link "Nthora - Go to homepage" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img [ref=e8] [cursor=pointer]
+            - generic [ref=e10] [cursor=pointer]: Nthora
+          - menubar [ref=e11]:
+            - menuitem "Go to homepage" [ref=e12] [cursor=pointer]: Home
+            - menuitem "Learn about Nthora" [ref=e13] [cursor=pointer]: About
+            - menuitem "Meet our team" [ref=e14] [cursor=pointer]: Team
+            - menuitem "View SafeShield theme integration" [ref=e15] [cursor=pointer]: SafeShield Demo
+            - menuitem "Get in touch with us" [ref=e16] [cursor=pointer]: Contact
+          - generic [ref=e17]:
+            - button "Sign in to your account" [ref=e18]: Sign In
+            - button "Get started with Nthora" [ref=e19]: Get Started
+          - button "Open navigation menu" [ref=e20]:
+            - img [ref=e21]
+    - main "Main content" [ref=e25]:
+      - banner "It All Starts With A Choice" [ref=e26]:
+        - generic [ref=e28]:
+          - heading "It All Starts With A Choice" [level=1] [ref=e29]:
+            - text: It All Starts With
+            - generic [ref=e30]: A Choice
+          - paragraph [ref=e31]: Your journey, your control, your data.
+          - paragraph [ref=e32]:
+            - text: An inclusive, adaptive onboarding platform empowering
+            - generic [ref=e33]: everyone
+            - text: to engage on their own terms
+          - generic [ref=e34]:
+            - heading "How would you like to begin your journey?" [level=2] [ref=e35]
+            - group "How would you like to begin your journey?" [ref=e36]:
+              - generic [ref=e37]: Choose between a self-guided solo journey or an assisted journey with guidance and support. Both options are fully accessible and customizable to your needs.
+              - 'button "Select solo journey: Self-guided adaptive onboarding with full control over your experience" [ref=e39]':
+                - generic [ref=e40]:
+                  - img [ref=e42]
+                  - heading "START NOW" [level=3] [ref=e44]
+                  - paragraph [ref=e45]: I'm ready to explore on my own
+                  - list "Solo journey features" [ref=e46]:
+                    - listitem [ref=e47]: • Self-guided adaptive onboarding
+                    - listitem [ref=e48]: • Personalized accessibility settings
+                    - listitem [ref=e49]: • Progress at your own pace
+                    - listitem [ref=e50]: • Full control over your experience
+                  - button [ref=e51]:
+                    - text: Begin Solo Journey
+                    - img [ref=e52]
+              - 'button "Select assisted journey: AI-powered guidance with human assistance and step-by-step walkthrough" [ref=e56]':
+                - generic [ref=e57]:
+                  - img [ref=e59]
+                  - heading "I NEED ASSISTANCE" [level=3] [ref=e64]
+                  - paragraph [ref=e65]: I'd like guidance and support
+                  - list "Assisted journey features" [ref=e66]:
+                    - listitem [ref=e67]: • AI-powered guidance and support
+                    - listitem [ref=e68]: • Human assistance when needed
+                    - listitem [ref=e69]: • Step-by-step walkthrough
+                    - listitem [ref=e70]: • Accessibility accommodations
+                  - button [ref=e71]:
+                    - text: Get Guided Support
+                    - img [ref=e72]
+          - img "Scroll down to discover more content" [ref=e75]:
+            - paragraph [ref=e76]: Discover more
+      - generic [ref=e77]:
+        - region "How It Works" [ref=e78]:
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - heading "How It Works" [level=2] [ref=e81]:
+                - text: How It
+                - generic [ref=e82]: Works
+              - paragraph [ref=e83]: Three simple steps to your personalized, accessible experience
+            - list "How it works steps" [ref=e84]:
+              - listitem [ref=e85]:
+                - generic [ref=e86]:
+                  - generic [ref=e87]:
+                    - img [ref=e89]
+                    - generic [ref=e94]:
+                      - generic [ref=e95]: "Step 1:"
+                      - text: Choose Your Path
+                  - generic [ref=e97]: Select solo exploration or guided assistance based on your comfort level
+              - listitem [ref=e98]:
+                - generic [ref=e99]:
+                  - generic [ref=e100]:
+                    - img [ref=e102]
+                    - generic [ref=e105]:
+                      - generic [ref=e106]: "Step 2:"
+                      - text: Customize Experience
+                  - generic [ref=e108]: Adapt the interface to your accessibility needs and preferences
+              - listitem [ref=e109]:
+                - generic [ref=e110]:
+                  - generic [ref=e111]:
+                    - img [ref=e113]
+                    - generic [ref=e115]:
+                      - generic [ref=e116]: "Step 3:"
+                      - text: Start Your Journey
+                  - generic [ref=e118]: Begin with full control over your data and privacy settings
+        - region "Your Data, Your Control" [ref=e119]:
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - heading "Your Data, Your Control" [level=2] [ref=e123]:
+                - text: Your Data, Your
+                - generic [ref=e124]: Control
+              - paragraph [ref=e125]: Complete transparency and control over your personal information
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - img [ref=e130]
+                  - text: Data Control Center
+                - generic [ref=e132]: Manage your data with futuristic switch toggles and complete transparency
+              - generic [ref=e134]:
+                - group "Data storage settings" [ref=e135]:
+                  - generic [ref=e136]:
+                    - generic [ref=e137]: Local Storage
+                    - switch "Local storage enabled" [checked]
+                  - generic [ref=e138]:
+                    - generic [ref=e139]: Cloud Sync
+                    - switch "Cloud sync disabled"
+                - group "Data management actions" [ref=e140]:
+                  - button "Export All Data" [ref=e141]:
+                    - img [ref=e142]
+                    - text: Export All Data
+                  - generic [ref=e146]: Download all your data in a portable format
+                  - button "Reset Preferences" [ref=e147]:
+                    - img [ref=e148]
+                    - text: Reset Preferences
+                  - generic [ref=e151]: Reset all settings to default values
+                  - button "Delete All Data" [ref=e152]:
+                    - img [ref=e153]
+                    - text: Delete All Data
+                  - generic [ref=e159]: Permanently delete all your data. This action cannot be undone.
+        - region "Adaptive Experience" [ref=e160]:
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - heading "Adaptive Experience" [level=2] [ref=e164]:
+                - text: Adaptive
+                - generic [ref=e165]: Experience
+              - paragraph [ref=e166]: The interface learns and adapts to your unique needs and interaction style
+            - generic [ref=e167]:
+              - generic [ref=e169]:
+                - generic [ref=e171]:
+                  - img [ref=e172]
+                  - text: Universal Access
+                - list "Universal access features" [ref=e179]:
+                  - listitem [ref=e180]: Screen reader optimization
+                  - listitem [ref=e181]: High contrast themes
+                  - listitem [ref=e182]: Keyboard navigation
+                  - listitem [ref=e183]: Voice control support
+                  - listitem [ref=e184]: Reduced motion options
+              - generic [ref=e186]:
+                - generic [ref=e188]:
+                  - img [ref=e189]
+                  - text: Smart Adaptation
+                - list "Smart adaptation features" [ref=e192]:
+                  - listitem [ref=e193]: Personalized interface scaling
+                  - listitem [ref=e194]: Adaptive color schemes
+                  - listitem [ref=e195]: Context-aware assistance
+                  - listitem [ref=e196]: Learning preferences
+                  - listitem [ref=e197]: Progressive enhancement
+        - region "AI-Powered Assistance" [ref=e198]:
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - heading "AI-Powered Assistance" [level=2] [ref=e202]:
+                - text: AI-Powered
+                - generic [ref=e203]: Assistance
+              - paragraph [ref=e204]: Get help when you need it, with intelligent support that understands your needs
+            - generic [ref=e207]:
+              - log "AI assistant conversation preview" [ref=e208]:
+                - img [ref=e210]
+                - generic [ref=e212]:
+                  - article "AI assistant message" [ref=e213]:
+                    - paragraph [ref=e214]: AI Assistant
+                    - paragraph [ref=e215]: Hello! I'm here to help you navigate Nthora. Would you like me to explain how the accessibility features work?
+                  - article "User message" [ref=e216]:
+                    - paragraph [ref=e217]: You
+                    - paragraph [ref=e218]: Yes, I'd like to know about screen reader support.
+              - button "Start Conversation" [ref=e219]:
+                - img [ref=e220]
+                - text: Start Conversation
+              - generic [ref=e222]: Begin a conversation with the AI assistant for personalized help and guidance
+    - contentinfo "Site footer" [ref=e223]:
+      - generic [ref=e224]:
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - link "Nthora - Return to homepage" [ref=e227] [cursor=pointer]:
+              - /url: /
+              - img [ref=e229] [cursor=pointer]
+              - generic [ref=e231] [cursor=pointer]: Nthora
+            - paragraph [ref=e232]: Empowering everyone to engage on their own terms through inclusive, adaptive technology inspired by the spirit of Wakanda.
+            - list "Social media links" [ref=e233]:
+              - listitem "Follow us on GitHub" [ref=e234] [cursor=pointer]:
+                - img [ref=e235] [cursor=pointer]
+              - listitem "Follow us on Twitter" [ref=e238] [cursor=pointer]:
+                - img [ref=e239] [cursor=pointer]
+              - listitem "Follow us on LinkedIn" [ref=e241] [cursor=pointer]:
+                - img [ref=e242] [cursor=pointer]
+              - listitem "Follow us on Email" [ref=e246] [cursor=pointer]:
+                - img [ref=e247] [cursor=pointer]
+          - generic [ref=e250]:
+            - heading "Quick Links" [level=3] [ref=e251]
+            - navigation "Quick Links" [ref=e252]:
+              - list [ref=e253]:
+                - listitem [ref=e254]:
+                  - link "About Us" [ref=e255] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e256]:
+                  - link "Our Team" [ref=e257] [cursor=pointer]:
+                    - /url: /team
+                - listitem [ref=e258]:
+                  - link "Knowledge Base" [ref=e259] [cursor=pointer]:
+                    - /url: /knowledge
+                - listitem [ref=e260]:
+                  - link "Contact" [ref=e261] [cursor=pointer]:
+                    - /url: /contact
+          - generic [ref=e262]:
+            - heading "Legal & Support" [level=3] [ref=e263]
+            - navigation "Legal & Support" [ref=e264]:
+              - list [ref=e265]:
+                - listitem [ref=e266]:
+                  - link "Terms & Conditions" [ref=e267] [cursor=pointer]:
+                    - /url: /terms
+                - listitem [ref=e268]:
+                  - link "Privacy Policy" [ref=e269] [cursor=pointer]:
+                    - /url: /privacy
+                - listitem [ref=e270]:
+                  - link "Accessibility" [ref=e271] [cursor=pointer]:
+                    - /url: /accessibility
+                - listitem [ref=e272]:
+                  - link "Support" [ref=e273] [cursor=pointer]:
+                    - /url: /support
+        - contentinfo "Copyright and company information" [ref=e274]:
+          - paragraph [ref=e275]: © 2024 Nthora. All rights reserved. Built with accessibility and inclusion at heart.
+          - generic "Company motto" [ref=e276]:
+            - generic [ref=e277]: Made with
+            - img "heart"
+            - generic [ref=e278]: for everyone, everywhere
+    - button "Open accessibility settings" [ref=e280]:
+      - img [ref=e281]
+    - generic [ref=e287]: Press Alt+A to open accessibility settings
+  - region "Notifications alt+T"
+```

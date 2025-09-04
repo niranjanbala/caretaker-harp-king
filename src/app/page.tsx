@@ -8,6 +8,7 @@ import AudienceMode from '@/components/audience/AudienceMode';
 import AdminMode from '@/components/admin/AdminMode';
 import AdminAuth from '@/components/admin/AdminAuth';
 import ThemeSelector from '@/components/ui/ThemeSelector';
+import PWAInstaller from '@/components/PWAInstaller';
 import { Settings, Music, Home, Search, Library, Heart, Plus } from 'lucide-react';
 
 export default function HomePage() {
@@ -47,17 +48,17 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="min-h-screen bg-black text-white flex flex-col lg:flex-row" data-testid="app-loaded">
       {/* Spotify-like Sidebar */}
-      <div className="w-64 bg-black border-r border-gray-800 flex flex-col">
+      <div className="w-full lg:w-64 bg-black border-b lg:border-b-0 lg:border-r border-gray-800 flex flex-col lg:min-h-screen">
         {/* Logo */}
-        <div className="p-6">
+        <div className="p-4 lg:p-6">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-green-500 rounded-full">
-              <Music className="w-6 h-6 text-black" />
+              <Music className="w-5 h-5 lg:w-6 lg:h-6 text-black" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-white">
+              <h1 className="text-base lg:text-lg font-bold text-white">
                 Caretaker Harp King
               </h1>
             </div>
@@ -65,32 +66,32 @@ export default function HomePage() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-3">
-          <div className="space-y-1">
+        <nav className="flex-1 px-3 pb-4 lg:pb-0">
+          <div className="grid grid-cols-3 lg:grid-cols-1 gap-1 lg:space-y-1 lg:block">
             <button
               onClick={() => setMode('audience')}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`w-full flex flex-col lg:flex-row items-center gap-1 lg:gap-3 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors ${
                 currentMode === 'audience'
                   ? 'bg-gray-800 text-white'
                   : 'text-gray-400 hover:text-white hover:bg-gray-800'
               }`}
             >
-              <Home className="w-5 h-5" />
-              Home
+              <Home className="w-4 h-4 lg:w-5 lg:h-5" />
+              <span className="hidden lg:inline">Home</span>
             </button>
             
             <button
-              className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800"
+              className="w-full flex flex-col lg:flex-row items-center gap-1 lg:gap-3 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800"
             >
-              <Search className="w-5 h-5" />
-              Search
+              <Search className="w-4 h-4 lg:w-5 lg:h-5" />
+              <span className="hidden lg:inline">Search</span>
             </button>
             
             <button
-              className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800"
+              className="w-full flex flex-col lg:flex-row items-center gap-1 lg:gap-3 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800"
             >
-              <Library className="w-5 h-5" />
-              Your Library
+              <Library className="w-4 h-4 lg:w-5 lg:h-5" />
+              <span className="hidden lg:inline">Library</span>
             </button>
           </div>
 
@@ -221,6 +222,9 @@ export default function HomePage() {
         onAuth={handleAdminAuth}
         modalId="admin-auth-modal"
       />
+
+      {/* PWA Install Prompt */}
+      <PWAInstaller />
     </div>
   );
 }
