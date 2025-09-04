@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAppStore } from '@/lib/store';
 import { AlgoliaService } from '@/lib/algolia';
 import { Song } from '@/types';
@@ -44,44 +44,7 @@ export default function InstantSearch() {
     }
   }, []);
 
-  useEffect(() => {
-    if (query.trim().length < 2) {
-      setResults([]);
-      setSelectedIndex(-1);
-      return;
-    }
-
-    performSearch(query);
-  }, [query, songs, useLocalSearch]);
-
-  const performSearch = async (searchQuery: string) => {
-    setIsLoading(true);
-    
-    try {
-      if (useLocalSearch || !process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
-        // Fallback to local search
-        const searchResults = performLocalSearch(searchQuery);
-        setResults(searchResults);
-      } else {
-        // Use Algolia search
-        const algoliaResults = await AlgoliaService.searchSongs(searchQuery);
-        setResults(algoliaResults.hits.map(hit => ({
-          song: hit as Song,
-          _highlightResult: hit._highlightResult || {}
-        })));
-      }
-    } catch (error) {
-      console.warn('Algolia search failed, falling back to local search:', error);
-      setUseLocalSearch(true);
-      const searchResults = performLocalSearch(searchQuery);
-      setResults(searchResults);
-    } finally {
-      setIsLoading(false);
-      setSelectedIndex(-1);
-    }
-  };
-
-  const performLocalSearch = (searchQuery: string): AlgoliaSearchResult[] => {
+  const performLocalSearch = useCallback((searchQuery: string): AlgoliaSearchResult[] => {
     const searchResults: AlgoliaSearchResult[] = [];
     const lowerQuery = searchQuery.toLowerCase();
 
@@ -127,7 +90,45 @@ export default function InstantSearch() {
     });
 
     return searchResults.slice(0, 8);
-  };
+  }, [songs]);
+
+  const performSearch = useCallback(async (searchQuery: string) => {
+    setIsLoading(true);
+    
+    try {
+      if (useLocalSearch || !process.env.NEXT_PUBLIC_ALGOLIA_APP_ID) {
+        // Fallback to local search
+        const searchResults = performLocalSearch(searchQuery);
+        setResults(searchResults);
+      } else {
+        // Use Algolia search
+        const algoliaResults = await AlgoliaService.searchSongs(searchQuery);
+        setResults(algoliaResults.hits.map(hit => ({
+          song: hit as Song,
+          _highlightResult: hit._highlightResult || {}
+        })));
+      }
+    } catch (error) {
+      console.warn('Algolia search failed, falling back to local search:', error);
+      setUseLocalSearch(true);
+      const searchResults = performLocalSearch(searchQuery);
+      setResults(searchResults);
+    } finally {
+      setIsLoading(false);
+      setSelectedIndex(-1);
+    }
+  }, [useLocalSearch, performLocalSearch]);
+
+  useEffect(() => {
+    if (query.trim().length < 2) {
+      setResults([]);
+      setSelectedIndex(-1);
+      return;
+    }
+
+    performSearch(query);
+  }, [query, performSearch]);
+
 
   const highlightMatch = (text: string, query: string): string => {
     const regex = new RegExp(`(${query})`, 'gi');
