@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Music, Calendar, MapPin, Clock, Users, Heart, Star, ArrowRight, Play } from 'lucide-react';
+import { Music, Calendar, MapPin, Clock, Users, Heart, Star, ArrowRight, Play, ChevronDown } from 'lucide-react';
 import KimoyoButton from '@/components/ui/KimoyoButton';
 
 interface ArtistIntroProps {
@@ -10,91 +10,98 @@ interface ArtistIntroProps {
 
 export default function ArtistIntro({ onCreateProfile }: ArtistIntroProps) {
   return (
-    <div className="h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center">
-      <div className="container mx-auto px-6 text-center">
-        {/* Single Fold Content - Perfectly Centered */}
-        <div className="max-w-4xl mx-auto space-y-8">
+    <div className="h-screen bg-black flex items-center justify-center relative overflow-hidden">
+      {/* Apple-style Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+      
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Apple-style Centered Content - Perfectly Fitted */}
+      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 flex flex-col justify-center h-full py-12">
+        
+        {/* Hero Typography - Apple Style - Compact */}
+        <div className="space-y-6 mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-thin text-white leading-tight tracking-tight">
+            1 Artist,<br />
+            1 Organizer,<br />
+            <span className="bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-transparent font-light">
+              1 Fan
+            </span>
+          </h1>
           
-          {/* Hero Typography */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
-              <span className="text-white">Music isn&apos;t just</span><br />
-              <span className="text-white">entertainment.</span><br />
-              <span className="bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-transparent">
-                It&apos;s connection.
-              </span>
-            </h1>
-            
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-400">
-              Susmith Louise sets the tone.
-            </h2>
-          </div>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 font-light max-w-3xl mx-auto">
+            Experience the revolutionary Caretaker Harp King.<br />
+            <span className="text-green-400">Live this Sunday at Zoey&apos;s Bangalore.</span>
+          </p>
+        </div>
 
-          {/* Live Performance - Compact */}
-          <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-6 md:p-8 shadow-2xl">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-3 h-3 bg-red-300 rounded-full animate-pulse"></div>
-              <span className="text-red-100 font-bold uppercase tracking-wider">🔴 LIVE THIS SUNDAY</span>
+        {/* Apple-style Feature Highlights - Compact */}
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 max-w-4xl mx-auto">
+          
+          {/* Artist */}
+          <div className="text-center space-y-3">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-xl">
+              <Music className="w-8 h-8 text-black" />
             </div>
-            
-            <h3 className="text-2xl md:text-3xl font-black text-white mb-6">
-              Join the Musical Revolution
-            </h3>
-            
-            <div className="flex items-center justify-center gap-8 md:gap-12 text-white">
-              <div className="text-center">
-                <Calendar className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <div className="text-lg font-bold">SUNDAY</div>
-              </div>
-              
-              <div className="text-center">
-                <Clock className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <div className="text-lg font-bold">9:30 - 10:30 AM</div>
-              </div>
-              
-              <div className="text-center">
-                <MapPin className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <div className="text-lg font-bold">ZOEY&apos;S BANGALORE</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Value Proposition - Compact */}
-          <div className="text-center space-y-4">
-            <p className="text-xl md:text-2xl text-gray-300 font-semibold">
-              <span className="text-green-400">One Artist.</span> 
-              <span className="text-purple-400 mx-2">Six Instruments.</span> 
-              <span className="text-yellow-400">Pure Magic.</span>
-            </p>
-            <p className="text-lg text-gray-400">
-              100% Live • 100% Natural • 100% Authentic
+            <h3 className="text-xl font-semibold text-white">The Artist</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Susmith Louise<br />
+              <span className="text-green-400">Multi-instrument mastery</span>
             </p>
           </div>
 
-          {/* MASSIVE Kimoyo CTA */}
-          <div className="pt-4">
-            {onCreateProfile && (
-              <KimoyoButton
-                onClick={onCreateProfile}
-                variant="primary"
-                size="xl"
-                intensity="bold"
-                beads={24}
-                orbitDuration={12}
-                className="text-xl md:text-2xl lg:text-3xl py-6 md:py-8 px-8 md:px-12 font-black"
-              >
-                <Users className="w-8 h-8 md:w-10 md:h-10" />
-                <span>CREATE YOUR PROFILE</span>
-                <ArrowRight className="w-8 h-8 md:w-10 md:h-10" />
-              </KimoyoButton>
-            )}
-            
-            <p className="mt-6 text-green-400 text-lg md:text-xl font-bold">
-              ⚡ Join 100+ music lovers • 🎵 Free to join • 🔥 Limited spots
+          {/* Organizer */}
+          <div className="text-center space-y-3">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
+              <Calendar className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-xl font-semibold text-white">The Experience</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Sunday 9:30-10:30 AM<br />
+              <span className="text-purple-400">Zoey&apos;s Bangalore</span>
+            </p>
+          </div>
+
+          {/* Fan */}
+          <div className="text-center space-y-3">
+            <div className="w-16 h-16 mx-auto bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-xl">
+              <Users className="w-8 h-8 text-black" />
+            </div>
+            <h3 className="text-xl font-semibold text-white">You</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Create your profile<br />
+              <span className="text-yellow-400">Join the magic</span>
             </p>
           </div>
 
         </div>
+
+        {/* Apple-style CTA - Compact */}
+        <div className="space-y-4">
+          {onCreateProfile && (
+            <KimoyoButton
+              onClick={onCreateProfile}
+              variant="primary"
+              size="lg"
+              intensity="medium"
+              beads={16}
+              orbitDuration={15}
+              className="text-lg md:text-xl py-3 md:py-4 px-6 md:px-8 font-semibold"
+            >
+              <span>Know more</span>
+              <ArrowRight className="w-5 h-5" />
+            </KimoyoButton>
+          )}
+          
+          <p className="text-gray-500 text-base">
+            Free to join • Limited spots available
+          </p>
+        </div>
+
       </div>
     </div>
   );
