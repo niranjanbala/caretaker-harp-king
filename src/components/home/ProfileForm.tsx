@@ -80,101 +80,95 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-white text-black flex items-center justify-center p-6">
+      <div className="w-full max-w-lg">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mb-6 shadow-2xl">
-            <User className="w-10 h-10 text-black" />
-          </div>
-          <h1 className="text-3xl font-bold mb-2">Create Your Profile</h1>
-          <p className="text-gray-400">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
+            Your story<br />
+            <span className="text-purple-600">starts here.</span>
+          </h1>
+          <p className="text-xl text-gray-600">
             Join the Caretaker Harp King experience
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="name" className="block text-lg font-bold text-gray-900 mb-3">
               Your Name *
             </label>
-            <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                id="name"
-                type="text"
-                value={profile.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                placeholder="Enter your full name"
-                className={`w-full bg-gray-800 border rounded-lg py-3 pl-12 pr-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-colors ${
-                  errors.name 
-                    ? 'border-red-500 focus:ring-red-500/50' 
-                    : 'border-gray-600 focus:ring-green-500/50 focus:border-green-500'
-                }`}
-                maxLength={50}
-              />
-            </div>
+            <input
+              id="name"
+              type="text"
+              value={profile.name}
+              onChange={(e) => handleInputChange('name', e.target.value)}
+              placeholder="Enter your full name"
+              className={`w-full bg-white border-2 rounded-xl py-4 px-6 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-lg ${
+                errors.name
+                  ? 'border-red-500 focus:ring-red-500/20'
+                  : 'border-gray-300 focus:ring-purple-500/20 focus:border-purple-500'
+              }`}
+              maxLength={50}
+            />
             {errors.name && (
-              <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+              <p className="mt-2 text-sm text-red-600 font-medium">{errors.name}</p>
             )}
           </div>
 
           {/* Age Field */}
           <div>
-            <label htmlFor="age" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="age" className="block text-lg font-bold text-gray-900 mb-3">
               Your Age *
             </label>
-            <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                id="age"
-                type="number"
-                value={profile.age}
-                onChange={(e) => handleInputChange('age', e.target.value)}
-                placeholder="Enter your age"
-                min="1"
-                max="120"
-                className={`w-full bg-gray-800 border rounded-lg py-3 pl-12 pr-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-colors ${
-                  errors.age 
-                    ? 'border-red-500 focus:ring-red-500/50' 
-                    : 'border-gray-600 focus:ring-green-500/50 focus:border-green-500'
-                }`}
-              />
-            </div>
+            <input
+              id="age"
+              type="number"
+              value={profile.age}
+              onChange={(e) => handleInputChange('age', e.target.value)}
+              placeholder="Enter your age"
+              min="1"
+              max="120"
+              className={`w-full bg-white border-2 rounded-xl py-4 px-6 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-lg ${
+                errors.age
+                  ? 'border-red-500 focus:ring-red-500/20'
+                  : 'border-gray-300 focus:ring-purple-500/20 focus:border-purple-500'
+              }`}
+            />
             {errors.age && (
-              <p className="mt-1 text-sm text-red-400">{errors.age}</p>
+              <p className="mt-2 text-sm text-red-600 font-medium">{errors.age}</p>
             )}
           </div>
 
           {/* Gender Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-3">
+            <label className="block text-lg font-bold text-gray-900 mb-4">
               Gender *
             </label>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {genderOptions.map((option) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => handleInputChange('gender', option.value)}
-                  className={`p-3 rounded-lg border transition-all duration-200 flex items-center gap-3 ${
+                  className={`p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-3 text-lg font-medium ${
                     profile.gender === option.value
-                      ? 'bg-green-600 border-green-500 text-white'
-                      : 'bg-gray-800 border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-700'
+                      ? 'bg-purple-600 border-purple-500 text-white shadow-lg'
+                      : 'bg-white border-gray-300 text-gray-700 hover:border-purple-300 hover:shadow-md'
                   }`}
                 >
-                  <span className="text-xl">{option.emoji}</span>
-                  <span className="font-medium">{option.label}</span>
+                  <span className="text-2xl">{option.emoji}</span>
+                  <span>{option.label}</span>
                   {profile.gender === option.value && (
-                    <Check className="w-4 h-4 ml-auto" />
+                    <Check className="w-5 h-5 ml-auto" />
                   )}
                 </button>
               ))}
             </div>
             {errors.gender && (
-              <p className="mt-1 text-sm text-red-400">{errors.gender}</p>
+              <p className="mt-2 text-sm text-red-600 font-medium">{errors.gender}</p>
             )}
           </div>
 
@@ -182,33 +176,37 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 disabled:from-gray-600 disabled:to-gray-700 text-black font-semibold py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:cursor-not-allowed"
+            className="w-full bg-black hover:bg-gray-800 disabled:bg-gray-400 text-white font-black text-xl py-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
-                <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
+                <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 Creating Profile...
               </>
             ) : (
               <>
                 Join the Experience
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-6 h-6" />
               </>
             )}
           </button>
         </form>
 
         {/* Footer */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-500 text-sm">
+        <div className="mt-12 text-center">
+          <p className="text-gray-600 text-lg font-medium">
             Your profile helps us personalize your music experience
           </p>
-          <div className="mt-4 flex items-center justify-center gap-4 text-xs text-gray-600">
-            <span>🔒 Privacy Protected</span>
-            <span>•</span>
-            <span>📱 Mobile Optimized</span>
-            <span>•</span>
-            <span>🎵 Music Ready</span>
+          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-gray-500">
+            <span className="flex items-center gap-1">
+              🔒 <strong>Privacy Protected</strong>
+            </span>
+            <span className="flex items-center gap-1">
+              📱 <strong>Mobile Optimized</strong>
+            </span>
+            <span className="flex items-center gap-1">
+              🎵 <strong>Music Ready</strong>
+            </span>
           </div>
         </div>
       </div>
