@@ -4,19 +4,18 @@ import { useEffect } from 'react';
 import { useAppStore } from '@/lib/store';
 import { themeEngine } from '@/lib/theme-engine';
 import songsData from '@/data/songs.json';
-import AudienceMode from '@/components/audience/AudienceMode';
+import HomePage from '@/components/home/HomePage';
 import AdminMode from '@/components/admin/AdminMode';
 import AdminAuth from '@/components/admin/AdminAuth';
 import ThemeSelector from '@/components/ui/ThemeSelector';
 import PWAInstaller from '@/components/PWAInstaller';
 import { Settings, Music, Home, Search, Library, Heart, Plus } from 'lucide-react';
 
-export default function HomePage() {
+export default function RootPage() {
   const {
     currentMode,
     isAdminUnlocked,
     currentTheme,
-    isDarkMode,
     songs,
     setSongs,
     setMode,
@@ -47,6 +46,17 @@ export default function HomePage() {
     return false;
   };
 
+  // Show new home experience for audience mode
+  if (currentMode === 'audience') {
+    return (
+      <div data-testid="app-loaded">
+        <HomePage />
+        <PWAInstaller />
+      </div>
+    );
+  }
+
+  // Show admin interface
   return (
     <div className="min-h-screen bg-black text-white flex flex-col lg:flex-row" data-testid="app-loaded">
       {/* Spotify-like Sidebar */}
@@ -70,14 +80,10 @@ export default function HomePage() {
           <div className="grid grid-cols-3 lg:grid-cols-1 gap-1 lg:space-y-1 lg:block">
             <button
               onClick={() => setMode('audience')}
-              className={`w-full flex flex-col lg:flex-row items-center gap-1 lg:gap-3 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors ${
-                currentMode === 'audience'
-                  ? 'bg-gray-800 text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-gray-800'
-              }`}
+              className="w-full flex flex-col lg:flex-row items-center gap-1 lg:gap-3 px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors text-gray-400 hover:text-white hover:bg-gray-800"
             >
               <Home className="w-4 h-4 lg:w-5 lg:h-5" />
-              <span className="hidden lg:inline">Home</span>
+              <span className="hidden lg:inline">Back to Home</span>
             </button>
             
             <button
@@ -185,9 +191,7 @@ export default function HomePage() {
         {/* Content */}
         <main className="flex-1 bg-gradient-to-b from-gray-900 to-black overflow-auto">
           <div className="p-6">
-            {currentMode === 'audience' ? (
-              <AudienceMode />
-            ) : isAdminUnlocked ? (
+            {isAdminUnlocked ? (
               <AdminMode />
             ) : (
               <div className="flex items-center justify-center min-h-[60vh]">

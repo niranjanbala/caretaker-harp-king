@@ -75,6 +75,9 @@ export interface AppState {
   isDarkMode: boolean;
   customColors: Record<string, string>;
   
+  // User Profile
+  userProfile?: UserProfile;
+  
   // Song Data
   songs: Song[];
   filteredSongs: Song[];
@@ -109,6 +112,17 @@ export interface UserFingerprint {
   lastRequest: number;
   clapsGiven: number;
   votesGiven: number;
+}
+
+export interface UserProfile {
+  name: string;
+  age: number;
+  gender: 'male' | 'female' | 'non-binary' | 'prefer-not-to-say';
+  createdAt: number;
+  preferences?: {
+    favoriteGenres?: string[];
+    notifications?: boolean;
+  };
 }
 
 export type AppMode = 'audience' | 'admin';

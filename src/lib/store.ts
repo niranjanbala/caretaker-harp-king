@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { AppState, Song, SongRequest, Poll, UserFingerprint } from '@/types';
+import { AppState, Song, SongRequest, Poll, UserFingerprint, UserProfile } from '@/types';
 
 interface AppStore extends AppState {
   // Actions
@@ -10,6 +10,10 @@ interface AppStore extends AppState {
   setTheme: (theme: string) => void;
   toggleDarkMode: () => void;
   setCustomColors: (colors: Record<string, string>) => void;
+  
+  // Profile actions
+  setUserProfile: (profile: UserProfile) => void;
+  clearUserProfile: () => void;
   
   // Song actions
   setSongs: (songs: Song[]) => void;
@@ -72,6 +76,8 @@ export const useAppStore = create<AppStore>()(
       currentTheme: 'default-light',
       isDarkMode: false,
       customColors: {},
+      
+      userProfile: undefined,
       
       songs: [],
       filteredSongs: [],
@@ -319,6 +325,10 @@ export const useAppStore = create<AppStore>()(
         const fingerprint = get().getUserFingerprint();
         return fingerprint.requestCount < 3;
       },
+      
+      setUserProfile: (profile) => set({ userProfile: profile }),
+      
+      clearUserProfile: () => set({ userProfile: undefined }),
     }),
     {
       name: 'caretaker-harp-king-storage',
@@ -327,6 +337,7 @@ export const useAppStore = create<AppStore>()(
         currentTheme: state.currentTheme,
         isDarkMode: state.isDarkMode,
         customColors: state.customColors,
+        userProfile: state.userProfile,
         requests: state.requests,
         polls: state.polls,
         totalClaps: state.totalClaps,
