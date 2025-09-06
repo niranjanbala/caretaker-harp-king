@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Calendar, Users, ArrowRight, Check } from 'lucide-react';
+import { User, Calendar, Users, ArrowRight, Check, Zap } from 'lucide-react';
 
 interface ProfileData {
   name: string;
@@ -23,10 +23,10 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
   const [errors, setErrors] = useState<Partial<ProfileData>>({});
 
   const genderOptions = [
-    { value: 'male', label: 'Male', emoji: '👨' },
-    { value: 'female', label: 'Female', emoji: '👩' },
-    { value: 'non-binary', label: 'Non-Binary', emoji: '🧑' },
-    { value: 'prefer-not-to-say', label: 'Prefer not to say', emoji: '🤐' }
+    { value: 'male', label: 'Male', emoji: '👨', color: 'from-blue-500 to-blue-600' },
+    { value: 'female', label: 'Female', emoji: '👩', color: 'from-pink-500 to-pink-600' },
+    { value: 'non-binary', label: 'Non-Binary', emoji: '🧑', color: 'from-purple-500 to-purple-600' },
+    { value: 'prefer-not-to-say', label: 'Prefer not to say', emoji: '🤐', color: 'from-gray-500 to-gray-600' }
   ];
 
   const validateForm = (): boolean => {
@@ -80,133 +80,145 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black flex items-center justify-center p-6">
-      <div className="w-full max-w-lg">
-        {/* Header */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center p-6">
+      <div className="w-full max-w-2xl">
+        {/* Hero Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-            Your story<br />
-            <span className="text-purple-600">starts here.</span>
+          <div className="w-32 h-32 mx-auto bg-gradient-to-r from-green-400 to-purple-500 rounded-full flex items-center justify-center mb-8 shadow-2xl">
+            <User className="w-16 h-16 text-black" />
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+            <span className="text-white">Your story</span><br />
+            <span className="bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-transparent">
+              starts here.
+            </span>
           </h1>
-          <p className="text-xl text-gray-600">
+          
+          <p className="text-2xl text-gray-300 font-semibold">
             Join the Caretaker Harp King experience
           </p>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Name Field */}
-          <div>
-            <label htmlFor="name" className="block text-lg font-bold text-gray-900 mb-3">
-              Your Name *
-            </label>
-            <input
-              id="name"
-              type="text"
-              value={profile.name}
-              onChange={(e) => handleInputChange('name', e.target.value)}
-              placeholder="Enter your full name"
-              className={`w-full bg-white border-2 rounded-xl py-4 px-6 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-lg ${
-                errors.name
-                  ? 'border-red-500 focus:ring-red-500/20'
-                  : 'border-gray-300 focus:ring-purple-500/20 focus:border-purple-500'
-              }`}
-              maxLength={50}
-            />
-            {errors.name && (
-              <p className="mt-2 text-sm text-red-600 font-medium">{errors.name}</p>
-            )}
-          </div>
-
-          {/* Age Field */}
-          <div>
-            <label htmlFor="age" className="block text-lg font-bold text-gray-900 mb-3">
-              Your Age *
-            </label>
-            <input
-              id="age"
-              type="number"
-              value={profile.age}
-              onChange={(e) => handleInputChange('age', e.target.value)}
-              placeholder="Enter your age"
-              min="1"
-              max="120"
-              className={`w-full bg-white border-2 rounded-xl py-4 px-6 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-lg ${
-                errors.age
-                  ? 'border-red-500 focus:ring-red-500/20'
-                  : 'border-gray-300 focus:ring-purple-500/20 focus:border-purple-500'
-              }`}
-            />
-            {errors.age && (
-              <p className="mt-2 text-sm text-red-600 font-medium">{errors.age}</p>
-            )}
-          </div>
-
-          {/* Gender Field */}
-          <div>
-            <label className="block text-lg font-bold text-gray-900 mb-4">
-              Gender *
-            </label>
-            <div className="grid grid-cols-2 gap-4">
-              {genderOptions.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => handleInputChange('gender', option.value)}
-                  className={`p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-3 text-lg font-medium ${
-                    profile.gender === option.value
-                      ? 'bg-purple-600 border-purple-500 text-white shadow-lg'
-                      : 'bg-white border-gray-300 text-gray-700 hover:border-purple-300 hover:shadow-md'
-                  }`}
-                >
-                  <span className="text-2xl">{option.emoji}</span>
-                  <span>{option.label}</span>
-                  {profile.gender === option.value && (
-                    <Check className="w-5 h-5 ml-auto" />
-                  )}
-                </button>
-              ))}
+        {/* High-Contrast Form */}
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Name Field */}
+            <div>
+              <label htmlFor="name" className="block text-2xl font-black text-gray-900 mb-4">
+                Your Name *
+              </label>
+              <input
+                id="name"
+                type="text"
+                value={profile.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                placeholder="Enter your full name"
+                className={`w-full bg-gray-50 border-4 rounded-2xl py-6 px-8 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-xl font-semibold ${
+                  errors.name 
+                    ? 'border-red-500 focus:ring-red-500/20 bg-red-50' 
+                    : 'border-gray-300 focus:ring-green-500/20 focus:border-green-500 focus:bg-white'
+                }`}
+                maxLength={50}
+              />
+              {errors.name && (
+                <p className="mt-3 text-lg text-red-600 font-bold">{errors.name}</p>
+              )}
             </div>
-            {errors.gender && (
-              <p className="mt-2 text-sm text-red-600 font-medium">{errors.gender}</p>
-            )}
-          </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-black hover:bg-gray-800 disabled:bg-gray-400 text-white font-black text-xl py-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? (
-              <>
-                <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                Creating Profile...
-              </>
-            ) : (
-              <>
-                Join the Experience
-                <ArrowRight className="w-6 h-6" />
-              </>
-            )}
-          </button>
-        </form>
+            {/* Age Field */}
+            <div>
+              <label htmlFor="age" className="block text-2xl font-black text-gray-900 mb-4">
+                Your Age *
+              </label>
+              <input
+                id="age"
+                type="number"
+                value={profile.age}
+                onChange={(e) => handleInputChange('age', e.target.value)}
+                placeholder="Enter your age"
+                min="1"
+                max="120"
+                className={`w-full bg-gray-50 border-4 rounded-2xl py-6 px-8 text-black placeholder-gray-400 focus:outline-none focus:ring-4 transition-all text-xl font-semibold ${
+                  errors.age 
+                    ? 'border-red-500 focus:ring-red-500/20 bg-red-50' 
+                    : 'border-gray-300 focus:ring-purple-500/20 focus:border-purple-500 focus:bg-white'
+                }`}
+              />
+              {errors.age && (
+                <p className="mt-3 text-lg text-red-600 font-bold">{errors.age}</p>
+              )}
+            </div>
 
-        {/* Footer */}
+            {/* Gender Field - Big Colorful Buttons */}
+            <div>
+              <label className="block text-2xl font-black text-gray-900 mb-6">
+                Gender *
+              </label>
+              <div className="grid grid-cols-2 gap-4">
+                {genderOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => handleInputChange('gender', option.value)}
+                    className={`p-6 rounded-2xl border-4 transition-all duration-200 flex items-center gap-4 text-xl font-bold ${
+                      profile.gender === option.value
+                        ? `bg-gradient-to-r ${option.color} text-white border-white shadow-2xl scale-105`
+                        : 'bg-gray-50 border-gray-300 text-gray-700 hover:border-gray-400 hover:shadow-lg hover:scale-102'
+                    }`}
+                  >
+                    <span className="text-3xl">{option.emoji}</span>
+                    <span className="flex-1">{option.label}</span>
+                    {profile.gender === option.value && (
+                      <Check className="w-6 h-6" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              {errors.gender && (
+                <p className="mt-3 text-lg text-red-600 font-bold">{errors.gender}</p>
+              )}
+            </div>
+
+            {/* MASSIVE Submit Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-400 disabled:to-gray-500 text-black font-black text-2xl md:text-3xl py-8 rounded-2xl transition-all duration-300 flex items-center justify-center gap-6 shadow-2xl hover:shadow-green-500/25 disabled:cursor-not-allowed border-4 border-green-400 hover:scale-105"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-8 h-8 border-4 border-black/30 border-t-black rounded-full animate-spin"></div>
+                  <span>CREATING PROFILE...</span>
+                </>
+              ) : (
+                <>
+                  <Zap className="w-10 h-10" />
+                  <span>JOIN THE EXPERIENCE NOW</span>
+                  <ArrowRight className="w-10 h-10" />
+                </>
+              )}
+            </button>
+          </form>
+        </div>
+
+        {/* Footer with Social Proof */}
         <div className="mt-12 text-center">
-          <p className="text-gray-600 text-lg font-medium">
-            Your profile helps us personalize your music experience
-          </p>
-          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-gray-500">
-            <span className="flex items-center gap-1">
-              🔒 <strong>Privacy Protected</strong>
-            </span>
-            <span className="flex items-center gap-1">
-              📱 <strong>Mobile Optimized</strong>
-            </span>
-            <span className="flex items-center gap-1">
-              🎵 <strong>Music Ready</strong>
-            </span>
+          <div className="bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm">
+            <p className="text-gray-300 text-lg font-semibold mb-4">
+              🎵 Your profile helps us personalize your music experience
+            </p>
+            <div className="flex items-center justify-center gap-8 text-green-400 font-bold">
+              <span className="flex items-center gap-2">
+                🔒 <strong>Privacy Protected</strong>
+              </span>
+              <span className="flex items-center gap-2">
+                📱 <strong>Mobile Optimized</strong>
+              </span>
+              <span className="flex items-center gap-2">
+                🎵 <strong>Music Ready</strong>
+              </span>
+            </div>
           </div>
         </div>
       </div>
