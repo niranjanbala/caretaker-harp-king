@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Music, Calendar, MapPin, Clock, Users, Heart, Star, ArrowRight, Play } from 'lucide-react';
+import KimoyoButton from '@/components/ui/KimoyoButton';
 
 interface ArtistIntroProps {
   onCreateProfile?: () => void;
@@ -159,18 +160,23 @@ export default function ArtistIntro({ onCreateProfile }: ArtistIntroProps) {
             </div>
           </div>
 
-          {/* MASSIVE Call to Action */}
+          {/* MASSIVE Kimoyo Call to Action */}
           <div className="text-center pb-16">
             {onCreateProfile && (
               <div className="max-w-2xl mx-auto">
-                <button
+                <KimoyoButton
                   onClick={onCreateProfile}
-                  className="w-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 text-black font-black text-2xl md:text-3xl px-12 py-8 rounded-3xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-green-500/25 flex items-center justify-center gap-6 border-4 border-green-400"
+                  variant="primary"
+                  size="xl"
+                  intensity="bold"
+                  beads={24}
+                  orbitDuration={12}
+                  className="w-full text-2xl md:text-3xl py-8 font-black"
                 >
-                  <Users className="w-12 h-12" />
+                  <Users className="w-10 h-10" />
                   <span>CREATE YOUR PROFILE</span>
-                  <ArrowRight className="w-12 h-12" />
-                </button>
+                  <ArrowRight className="w-10 h-10" />
+                </KimoyoButton>
                 
                 <p className="mt-8 text-green-400 text-xl font-bold">
                   ⚡ Join 100+ music lovers • 🎵 Free to join • 🔥 Limited spots

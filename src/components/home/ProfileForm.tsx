@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { User, Calendar, Users, ArrowRight, Check, Zap } from 'lucide-react';
+import KimoyoButton from '@/components/ui/KimoyoButton';
 
 interface ProfileData {
   name: string;
@@ -180,11 +181,16 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
               )}
             </div>
 
-            {/* MASSIVE Submit Button */}
-            <button
+            {/* MASSIVE Kimoyo Submit Button */}
+            <KimoyoButton
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-400 disabled:to-gray-500 text-black font-black text-2xl md:text-3xl py-8 rounded-2xl transition-all duration-300 flex items-center justify-center gap-6 shadow-2xl hover:shadow-green-500/25 disabled:cursor-not-allowed border-4 border-green-400 hover:scale-105"
+              variant="primary"
+              size="xl"
+              intensity="bold"
+              beads={20}
+              orbitDuration={10}
+              className="w-full text-2xl md:text-3xl py-8 font-black"
             >
               {isSubmitting ? (
                 <>
@@ -198,7 +204,7 @@ export default function ProfileForm({ onProfileComplete }: ProfileFormProps) {
                   <ArrowRight className="w-10 h-10" />
                 </>
               )}
-            </button>
+            </KimoyoButton>
           </form>
         </div>
 
